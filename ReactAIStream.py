@@ -24,7 +24,10 @@ def add(a:int,b:int)-> int:
 
 tools = [add]
 
-model = ChatOpenAI(model="gpt-4o").bind_tools(tools)
+
+api_key = st.secrets["OPENAI_API_KEY"]
+model = ChatOpenAI(model="gpt-4o", api_key=api_key).bind_tools(tools)
+
 
 def model_call(state:AgentState)-> AgentState:
     system_prompt = SystemMessage(content="You are my Ai Assistant answer my query with the best of your ability")
