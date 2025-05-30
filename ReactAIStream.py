@@ -24,8 +24,8 @@ def add(a:int,b:int)-> int:
 
 tools = [add]
 
+api_key ='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'
 
-api_key = st.secrets["OPENAI_API_KEY"]
 model = ChatOpenAI(model="gpt-4o", api_key=api_key).bind_tools(tools)
 
 
